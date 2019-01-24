@@ -80,6 +80,36 @@ class LoginController extends Controller
     }
 
     /**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return Response
+     */
+    public function handleFacebookCallback()
+    {
+        try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (\Exception $e) {
+            return redirect('/');
+        }
+
+        $authUser = $this->findOrCreateUser($user);
+
+        Auth::login($authUser, true);
+
+        return redirect($this->redirectTo);
+    }
+
+    /**
      * Return user if exists; create and return if doesn't.
      *
      * @param $providerUser

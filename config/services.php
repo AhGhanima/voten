@@ -20,6 +20,12 @@ return [
          'redirect'      => env('GOOGLE_REDIRECT'),
      ],
 
+     'facebook' => [
+        'client_id'     => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect'      => env('FACEBOOK_REDIRECT'),
+    ],
+
      'recaptcha' => [
          'key'     => env('GOOGLE_RECAPTCHA_KEY'),
          'secret'  => env('GOOGLE_RECAPTCHA_SECRET'),

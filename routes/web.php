@@ -17,6 +17,8 @@ Route::group(['middleware' => ['http2']], function () {
     // social logins
     Route::get('/login/google', 'Auth\LoginController@redirectToGoogle');
     Route::get('/login/google/callback', 'Auth\LoginController@handleGoogleCallback');
+    Route::get('/login/facebook', 'Auth\LoginController@redirectToFacebook');
+    Route::get('/login/facebook/callback', 'Auth\LoginController@handleFacebookCallback');
 
     Route::get('/email/verify', 'Auth\VerificationController@verifyEmailAddress');
 
