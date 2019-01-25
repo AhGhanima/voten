@@ -24,6 +24,7 @@ class SubmissionResource extends Resource
             'title'           => $this->title,
             'type'            => $this->type,
             'nsfw'            => (bool) $this->nsfw,
+            'hidden'            => (bool) $this->hidden,
             'content'         => $this->data,
             'rate'            => $this->rate,
             'likes_count'   => $this->likes,

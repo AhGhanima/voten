@@ -108,6 +108,7 @@ class SubmissionController extends Controller
                 'channel_name' => $request->channel_name,
                 'channel_id'   => $channel->id,
                 'nsfw'         => $request->input('nsfw', 0),
+                'hidden'         => $request->input('hidden', 0),
                 'rate'         => firstRate(),
                 'user_id'      => Auth::id(),
                 'data'         => $data,
